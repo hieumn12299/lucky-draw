@@ -88,81 +88,88 @@ function App() {
   }
 
   return (
-    step === 1 ? <div className="max-w-[600px] mx-auto min-h-screen relative">
-      <div className='absolute top-1/2 -translate-y-1/2 w-full'>
-        {/* Responsive Email Input */}
-        <label htmlFor="name" className="block mb-2">
-          Tên:
-        </label>
-        <input
-          type="name"
-          id="name"
-          value={name}
-          className="border p-2 rounded-md w-full"
-          placeholder="Tên lucky draw được cấp của bạn"
-          onChange={(e) => setName(e.target.value)}
-        />
+    <div className='bg-[#f1dfef]'>
+      <div className='bg-white/60 fixed top-0 left-0 h-screen w-screen'></div>
+      <div className='bg-hero-pattern bg-center bg-no-repeat min-h-screen'>
+        {step === 1 ? <div className="max-w-[600px] px-2 mx-auto min-h-screen relative">
+          <div className='absolute top-1/2 h-40 -translate-y-1/2 w-full'>
+            {/* Responsive Email Input */}
+            <div className='flex justify-center w-full'>
+              <label htmlFor="name" className="inline-block mx-auto px-2 font-bold bg-[#f1dfef] mb-4 text-[32px] text-center text-[#c53f78]">
+              #MEMECUOIHEHE
+            </label>
+            </div>
+            <input
+              type="name"
+              id="name"
+              value={name}
+              className="border p-2 rounded-md w-full"
+              placeholder="Hãy nhập tên của bạn vào đây nè!!!"
+              onChange={(e) => setName(e.target.value)}
+            />
 
-        {/* Responsive Subscribe Button */}
-        <button
-          type='button'
-          className="bg-blue-500 text-white p-2 rounded-md mt-4 w-full"
-          onClick={async () => {
-            try {
-              await handleFindUser()
-            } catch (error) {
-              alert('Tên không hợp lệ');
-            }
-          }}
-        >
-          Đồng ý
-        </button>
+            {/* Responsive Subscribe Button */}
+            <button
+              type='button'
+              className="bg-[#c53f78] text-[#f1dfef] font-bold p-2 rounded-md mt-4 w-full"
+              onClick={async () => {
+                try {
+                  await handleFindUser()
+                } catch (error) {
+                  alert('Tên không hợp lệ');
+                }
+              }}
+            >
+              ĐỒNG Ý
+            </button>
+          </div>
+        </div> : step === 2 ?
+          <div className='flex flex-col justify-center px-2 min-w-[100vw] md:min-w-[600px] max-w-screen fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
+            <div className='flex justify-center w-full'>
+              <label htmlFor="name" className="inline-block mx-auto px-2 font-bold bg-[#f1dfef] mb-4 text-[30px] md:text-[50px] text-center text-[#c53f78]">
+              ✨ LUCKY LUCKY ✨
+            </label>
+            </div>
+            <hr />
+            <div className='flex justify-evenly md:justify-between flex-wrap gap-3 py-6'>
+              {listBox.map((item, index) => {
+                return (
+                  <div key={index} className='flex justify-center flex-col items-center gap-y-2 cursor-pointer' onClick={() => drawPrize(index)}>
+                    <img src="https://pngfre.com/wp-content/uploads/Gift-18.png" className='md:w-60 md:h-60 w-[120px] h-[120px]' />
+                    <h2 id="message">NHẬN QUÀ</h2>
+                  </div>
+                )
+              })}
+            </div>
+          </div> :
+          step === 3 ? <>
+            <Confetti />
+            <div className="flex md:w-auto w-[calc(100vw-10px)] items-center justify-center fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+              <div className="rounded-lg bg-gray-50 px-8 py-8 md:px-16 md:py-14">
+                <div className="flex justify-center">
+                  <div className="rounded-full bg-green-200 p-6">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 p-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8 text-white">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="my-4 text-center font-semibold text-gray-700 text-[20px] md:text-[30px]">MỪNG BÀ NHA!<br/>✨ TRÚNG QUÀ RÙI NÈ! ✨</h3>
+              </div>
+            </div>
+          </> : <>
+            <div className="flex md:w-auto w-[calc(100vw-10px)] items-center justify-center fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+              <div className="rounded-lg bg-gray-50 px-8 py-8 md:px-12 md:py-12">
+                <div className="flex justify-center">
+                  <span className='text-[63px]'>😞</span>
+                </div>
+                <h3 className="my-4 text-center font-semibold text-gray-700 text-[20px] md:text-[30px]">Tiếc quá, <br/> hẹn bà lần sau nha!!!</h3>
+              </div>
+            </div>
+          </>}
       </div>
-    </div> : step === 2 ?
-      <div className='flex flex-col justify-center p-12 max-w-[900px] mx-auto'>
-        <h1 className='text-[50px] text-center py-4'> Lucky Draw </h1>
-        <hr />
-        <div className='flex justify-between flex-wrap gap-3 py-6'>
-          {listBox.map((item, index) => {
-            return (
-              <div key={index} className='flex justify-center flex-col items-center gap-y-2 cursor-pointer' onClick={() => drawPrize(index)}>
-                <img src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Gifts-and-Chocolates-PNG-/Transparent_White_Present_Box_with_Red_Bow_PNG_Clipart.png?" width={120} height={120} />
-                <h2 id="message">Bấm để nhận quà</h2>
-              </div>
-            )
-          })}
-        </div>
-      </div> :
-      step === 3 ? <>
-        <Confetti />
-        <div className="flex min-h-screen items-center justify-center bg-gray-100">
-          <div className="rounded-lg bg-gray-50 px-16 py-14">
-            <div className="flex justify-center">
-              <div className="rounded-full bg-green-200 p-6">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-8 w-8 text-white">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <h3 className="my-4 text-center text-3xl font-semibold text-gray-700">Congratuation!!!</h3>
-          </div>
-        </div>
-      </> : <>
-        <div className="flex min-h-screen items-center justify-center bg-gray-100">
-          <div className="rounded-lg bg-gray-50 px-16 py-14">
-            <div className="flex justify-center">
-              <div className="rounded-full bg-red-200 p-6">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-500 p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="fill-current text-white" width="20" height="20"><path fillRule="evenodd" d="M4.47.22A.75.75 0 015 0h6a.75.75 0 01.53.22l4.25 4.25c.141.14.22.331.22.53v6a.75.75 0 01-.22.53l-4.25 4.25A.75.75 0 0111 16H5a.75.75 0 01-.53-.22L.22 11.53A.75.75 0 010 11V5a.75.75 0 01.22-.53L4.47.22zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5H5.31zM8 4a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 4zm0 8a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-                </div>
-              </div>
-            </div>
-            <h3 className="my-4 text-center text-3xl font-semibold text-gray-700">Tiếc quá không trúng mất rồi!!!</h3>
-          </div>
-        </div>
-      </>
+    </div>
 
   );
 }
