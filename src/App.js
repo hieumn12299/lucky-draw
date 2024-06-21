@@ -145,7 +145,7 @@ function App() {
           step === 3 ? <>
             <Confetti />
             <div className="flex md:w-auto w-[calc(100vw-10px)] items-center justify-center fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-              <div className="rounded-lg bg-gray-50 px-8 py-8 md:px-16 md:py-14">
+              <div className="rounded-lg bg-gray-50 px-8 py-8 md:px-12 md:py-12">
                 <div className="flex justify-center">
                   <div className="rounded-full bg-green-200 p-6">
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 p-4">
@@ -164,7 +164,7 @@ function App() {
                 <div className="flex justify-center">
                   <span className='text-[63px]'>😞</span>
                 </div>
-                <h3 className="my-4 text-center font-semibold text-gray-700 text-[20px] md:text-[30px]">Tiếc quá, <br/> hẹn bà lần sau nha!!!</h3>
+                <h3 className="my-4 text-center font-semibold text-gray-700 text-[20px] md:text-[30px]">TIẾC QUÁ, <br/> HẸN BÀ LẦN SAU NHA!!!</h3>
               </div>
             </div>
           </>}
