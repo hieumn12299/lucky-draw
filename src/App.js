@@ -10,7 +10,7 @@ function App() {
 
   const handleFindUser = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/users/${name}`);
+      const response = await axios.get(`https://be-lucky.onrender.com/users/${name}`);
       if (response.data.isSubmit) {
         if (response.data.isLucky) {
           return setStep(3);
@@ -28,7 +28,7 @@ function App() {
 
   const getAll = async () => {
     try {
-      let response = await axios.get('http://localhost:5000/users');
+      let response = await axios.get('https://be-lucky.onrender.com/users');
       return response.data;
     } catch (error) {
       return error;
@@ -71,7 +71,7 @@ function App() {
 
   const handleSubmit = async (status) => {
     try {
-      let response = await axios.put(`http://localhost:5000/update/${name}`, {
+      let response = await axios.put(`https://be-lucky.onrender.com/update/${name}`, {
         isSubmit: true,
         isLucky: status
       });
