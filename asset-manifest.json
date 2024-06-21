@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/lucky-lucky/static/css/main.d9cc5b92.css",
-    "main.js": "/lucky-lucky/static/js/main.3c7264ba.js",
-    "static/js/453.ed3810f9.chunk.js": "/lucky-lucky/static/js/453.ed3810f9.chunk.js",
-    "static/media/background.png": "/lucky-lucky/static/media/background.5e8e3fd0cb6856e5d3f5.png",
-    "index.html": "/lucky-lucky/index.html",
-    "main.d9cc5b92.css.map": "/lucky-lucky/static/css/main.d9cc5b92.css.map",
-    "main.3c7264ba.js.map": "/lucky-lucky/static/js/main.3c7264ba.js.map",
-    "453.ed3810f9.chunk.js.map": "/lucky-lucky/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/lucky-draw/static/css/main.4a744791.css",
+    "main.js": "/lucky-draw/static/js/main.13f0ab6d.js",
+    "static/js/453.ed3810f9.chunk.js": "/lucky-draw/static/js/453.ed3810f9.chunk.js",
+    "static/media/background.png": "/lucky-draw/static/media/background.5e8e3fd0cb6856e5d3f5.png",
+    "index.html": "/lucky-draw/index.html",
+    "main.4a744791.css.map": "/lucky-draw/static/css/main.4a744791.css.map",
+    "main.13f0ab6d.js.map": "/lucky-draw/static/js/main.13f0ab6d.js.map",
+    "453.ed3810f9.chunk.js.map": "/lucky-draw/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9cc5b92.css",
-    "static/js/main.3c7264ba.js"
+    "static/css/main.4a744791.css",
+    "static/js/main.13f0ab6d.js"
   ]
 }
