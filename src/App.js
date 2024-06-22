@@ -54,7 +54,9 @@ function App() {
     let probabilities = [];
     // Tính toán tỷ lệ trúng thưởng cho từng box
     if (totalBoxes === 3) {
-      probabilities = [0.3333, 0.3333, 0.3333];
+      // probabilities = [0.3333, 0.3333, 0.3333];
+      //test 100% win
+      probabilities = [1,1,1];
     } else if (totalBoxes === 2) {
       probabilities = [0.5, 0.5];
     } else if (totalBoxes === 1) {
